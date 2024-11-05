@@ -1,11 +1,12 @@
 def merge_sorted_arrays(arr1, arr2):
     # Implement your logic here
     # return sorted(arr1+arr2)
+    res=[]
     for i in arr1:
         for j in arr2:
-            if i>j:
-                arr1.append(i)
-    return arr1
+            if j<i:
+                res[j,i]
+    return res
 
 
 # Direct input
