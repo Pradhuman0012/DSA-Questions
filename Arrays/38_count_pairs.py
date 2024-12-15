@@ -14,19 +14,36 @@
 # -------------optimization-------------
 # TC = O(N)
 # SC = O(N)
+# pair=['a','g']
+# input_string="baagdcag"
+# n=len(input_string)
+# count=0
+# g_count=[0]*n
+# for i in range(n-1,-1,-1):
+#     if input_string[i]=='g':
+#         count+=1
+#     g_count[i]=count
+
+# pair_count=0
+# for i in range(n):
+#     if input_string[i]==pair[0]:
+#         pair_count+=g_count[i]
+
+# print(pair_count)
+
+
+# -------------optimization 2-------------
+# TC = O(N)
+# SC = O(1)
 pair=['a','g']
 input_string="baagdcag"
 n=len(input_string)
+
 count=0
-g_count=[0]*n
+res=0
 for i in range(n-1,-1,-1):
-    if input_string[i]=='g':
+    if input_string[i]==pair[1]:
         count+=1
-    g_count[i]=count
-
-pair_count=0
-for i in range(n):
-    if input_string[i]==pair[0]:
-        pair_count+=g_count[i]
-
-print(pair_count)
+    elif input_string[i]==pair[0]:
+        res+=count
+print(res)
